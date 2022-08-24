@@ -30,6 +30,6 @@ var questions = [
         title: "string values must be enclosed within____ when being assigned to variables",
         choices: ["commas", "curley brackets", "quotes", "perentheses"],
         answer: "commas"
-    },
+    }
 
 ]

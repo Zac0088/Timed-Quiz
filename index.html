@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,35 @@
     <link rel="stylesheet" href="style.css">
     <title>Code Quiz!!!</title>
 </head>
+
 <body>
-    <nav>
+    <div id="welcomeScreen" class="welcomeScreen">
         <h1>Super Fun Coding Quiz</h1>
 
-    </nav>
-    <main>
+        <button id="beginQuizBtn" class="beginQuizBtn">Begin Quiz</button>
+
+
+    </div>
+    <div id="questionScreen" class="questionScreen">
+        <h1 id="timer"></h1>
         <p>
             Answer the Codeing Themed questions in the time limit given to win.
-            Caution!! Wrong answers given will remove 10 seconds from your timer!!
+            Caution! Wrong answers given will remove 10 seconds from your timer.
             Have fun, and goodluck!!!
         </p>
-        <button id="beginQuiz" type="button">Begin Quiz</button>
-
-        <section id="multipleChoiceQuestions">
-
-        <ul>
-            <li><button></button></li>
-            <li><button></button></li>
-            <li><button></button></li>
-            <li><button></button></li>
-        </ul>
-        </section>
-        <aside>
-            <h2>Well Done!</h2>
-            <p>YOur Score</p>
-            <label>Add your namw</label>
-            <input id="yourName" type="text"/>
-            <button id="submit">Submit</button>
-        </aside>
+        <h2 id="question" class="question"></h2>
+        <ol id="answer" class="answer"></ol>
+    </div>
+    <div id="highScore">
+        <h3>Well Done!!</h3>
+        <h4>Add your name to the honor board</h4>
+        <h5 id="scoreDisplay"></h5>
+        <input type="text" id="yourName" />
+        <button id="submit">Submit</button>
+    </div>
     </main>
     <script src="script.js"></script>
-    
+
 </body>
+
 </html>
