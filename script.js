@@ -1,11 +1,4 @@
-var welcomeScreen = document.getElementById("welcomeScreen");
-var highScoresBoard =document.getElementById("highScoreSection");
-var submit = document.getElementById("submit");
-var questionTitle = document.getElementById("question");
-var answersListParent = document.getElementById("answers");
-var timerDisplay = document.getElementById("timer");
-var beginQuizBtn = document.getElementById("beginQuizBtn");
-var questionScreen = document.getElementById("QuestionScreen");
+
 
 var questions = [
     {
@@ -34,9 +27,22 @@ var questions = [
         choices: ["commas", "curley brackets", "quotes", "perentheses"],
         answer: "commas"
     }
+ ];
+ var welcomeScreen = document.getElementById("welcomeScreen");
+ var highScoresBoard =document.getElementById("highScoreSection");
+ var submit = document.getElementById("submit");
+ var questionTitle = document.getElementById("question");
+ var answersListParent = document.getElementById("answers");
+ var timerDisplay = document.getElementById("timer");
+ var beginQuizBtn = document.getElementById("beginQuizBtn");
+ var questionScreen = document.getElementById("QuestionScreen");
 
-]
-function startQuiz(){
+
+ var questionAskedIndex =0;
+ var time=60;
+ var quizTimer;
+
+ function startQuiz(){
     welcomeScreen.style.display = "none";
     questionScreen.style.display ="block";
     startQuizTimer();
@@ -44,7 +50,7 @@ function startQuiz(){
     startQuestions();
 }
 
-function startQuizTimer(){
+ function startQuizTimer(){
     quizTimer = setInterval(function(){
         time--;
         timerDisplay.textContent= time;
@@ -53,4 +59,54 @@ function startQuizTimer(){
             endQuiz();
         }
     }, 1000)
-}
+ }
+
+ function startQuestions() {
+    var currentQuestion = questions[questionAskedIndex].title;
+    questionTitle.textContent = currentQuestion;
+    answersListParent.innerHTML ="";
+    var currentQuestionAnswers = questions[questionAskedIndex].choices;
+    currentQuestionAnswers.forEach(function (answer) {
+        var answerButton = document.createElement("button");
+        answerButton.setAttribute("value", answer)
+        answerButton.textContent = answer;
+        answerButton.onclick = checkAnswerSelected
+        answersListParent.appendChild(answerButton);
+    })
+ }
+
+ function checkAnswerSelected() {
+    var answerSelected = this.value;
+    if (answerSelected === questions[questionAskedIndex].answer) {
+        alert("correct")
+    } else{
+        alert("wrong")
+        time -=10;
+        if (time <= 0){
+            endQuiz();
+        }
+        timerDisplay.textContent = time;
+    }
+    questionAskedIndex++;
+    console.log(questionAskedIndex)
+    if (questionAskedIndex === questions.length){
+        endQuiz();
+    }
+    startQuestions();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    beginQuizBtn.onclick = startQuiz;
