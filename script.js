@@ -36,3 +36,21 @@ var questions = [
     }
 
 ]
+function startQuiz(){
+    welcomeScreen.style.display = "none";
+    questionScreen.style.display ="block";
+    startQuizTimer();
+    timerDisplay.textContent = time;
+    startQuestions();
+}
+
+function startQuizTimer(){
+    quizTimer = setInterval(function(){
+        time--;
+        timerDisplay.textContent= time;
+        if(time < 0){
+            time =0;
+            endQuiz();
+        }
+    }, 1000)
+}
