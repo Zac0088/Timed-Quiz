@@ -1,8 +1,11 @@
-var startButton = document.getElementById("beginQuiz");
+var welcomeScreen = document.getElementById("welcomeScreen");
+var highScoresBoard =document.getElementById("highScoreSection");
 var submit = document.getElementById("submit");
-var timer = document.getElementById("timer");
-var clear = document.getElementById("clear");
-var goBack = document.getElementById("goBack");
+var questionTitle = document.getElementById("question");
+var answersListParent = document.getElementById("answers");
+var timerDisplay = document.getElementById("timer");
+var beginQuizBtn = document.getElementById("beginQuizBtn");
+var questionScreen = document.getElementById("QuestionScreen");
 
 var questions = [
     {
