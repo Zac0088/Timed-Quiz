@@ -25,9 +25,9 @@ This weeks challenge is to create a javascript themed multiple choice coding qui
 > * A repository that only includes starter code
 
 # Live URL
-
+https://zac0088.github.io/Timed-Quiz/
 
 # Screenshot
-
+![screenShot](/images/screencapture-file-C-Users-zac-c-Desktop-Timed-Quiz-index-html-2022-08-25-23_00_26.png)
 # Contact Page
-
+ [Zachary Smart on GitHUB] (https://github.com/Zac0088)

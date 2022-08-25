@@ -1,5 +1,5 @@
 
-
+// quiz questions
 var questions = [
     {
         title: "commonly used data types DO NOT include?",
@@ -28,7 +28,7 @@ var questions = [
         answer: "commas"
     }
  ];
-
+// Variables given
  var welcomeScreen = document.getElementById("welcomeScreen");
  var highScoresBoard = document.getElementById("highScoreSection");
  var submit = document.getElementById("submit");
@@ -45,7 +45,7 @@ var questions = [
  var questionAskedIndex = 0;
  var time= 60;
  var quizTimer;
-
+// start quiz function
  function startQuiz(){
     welcomeScreen.style.display = "none";
     questionScreen.style.display ="block";
@@ -53,7 +53,7 @@ var questions = [
     timerDisplay.textContent = time;
     startQuestions();
  }
-
+// start quiztimer function
  function startQuizTimer(){
     quizTimer = setInterval(function(){
         time--;
@@ -66,7 +66,7 @@ var questions = [
         
     }, 1000)
  }
-
+// start questions function
  function startQuestions() {
     var currentQuestion = questions[questionAskedIndex].title;
     questionTitle.textContent = currentQuestion;
@@ -81,7 +81,7 @@ var questions = [
         answersListParent.appendChild(answerButton);
     })
 }
-
+// check answers function 
  function checkAnswerSelected() {
     var answerSelected = this.value;
     if (answerSelected === questions[questionAskedIndex].answer) {
@@ -101,7 +101,7 @@ var questions = [
     }
     startQuestions();
     }
-
+// end quiz function
     function endQuiz(){
         clearInterval(quizTimer);
         questionScreen.style.display ="none";
