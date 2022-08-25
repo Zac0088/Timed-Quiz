@@ -38,6 +38,7 @@ var questions = [
  var beginQuizBtn = document.getElementById("beginQuizBtn");
  var questionScreen = document.getElementById("questionScreen");
  questionScreen.style.display = "none";
+ highScoresBoard.style.display = "none";
 
 
 
@@ -100,5 +101,15 @@ var questions = [
     }
     startQuestions();
     }
+
+    function endQuiz(){
+        clearInterval(quizTimer);
+        questionScreen.style.display ="none";
+        highScoresBoard.style.display = "block";
+        var scoreDisplay = document.getElementById("scoreDisplay");
+        scoreDisplay.textContent = "Your Score" + time;
+    }
+
+
 
     beginQuizBtn.onclick = startQuiz;
