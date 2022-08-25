@@ -105,7 +105,7 @@ var questions = [
     function endQuiz(){
         clearInterval(quizTimer);
         questionScreen.style.display ="none";
-        highScoresBoard.style.display = "block";
+        highScore.style.display = "block";
         var scoreDisplay = document.getElementById("scoreDisplay");
         scoreDisplay.textContent = "Your Score" + time;
 
@@ -120,7 +120,7 @@ var questions = [
             highscores.push(scoreObject);
             localStorage.setItem("highscores", JSON.stringify(highscores))
 
-            window.location.href = "scores.html";
+            window.location.href = "highscores.html";
         }
         }
     
