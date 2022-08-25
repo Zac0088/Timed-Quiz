@@ -30,7 +30,7 @@ var questions = [
  ];
 
  var welcomeScreen = document.getElementById("welcomeScreen");
- var highScoresBoard =document.getElementById("highScoreSection");
+ var highScoresBoard = document.getElementById("highScoreSection");
  var submit = document.getElementById("submit");
  var questionTitle = document.getElementById("question");
  var answersListParent = document.getElementById("answers");
@@ -38,7 +38,7 @@ var questions = [
  var beginQuizBtn = document.getElementById("beginQuizBtn");
  var questionScreen = document.getElementById("questionScreen");
  questionScreen.style.display = "none";
- highScoresBoard.style.display = "none";
+ highScore.style.display = "none";
 
 
 
@@ -108,7 +108,22 @@ var questions = [
         highScoresBoard.style.display = "block";
         var scoreDisplay = document.getElementById("scoreDisplay");
         scoreDisplay.textContent = "Your Score" + time;
-    }
+
+        var submitScore = document.getElementById("submitScore");
+        submitScore.onclick = function(){
+            var highscores = JSON.parse(localStorage.getItem("highscores")) || []
+            var usersName = document.getElementById("name").value;
+            var scoreObject = {
+                name: usersName,
+                score: time
+            }
+            highscores.push(scoreObject);
+            localStorage.setItem("highscores", JSON.stringify(highscores))
+
+            window.location.href = "scores.html";
+        }
+        }
+    
 
 
 
