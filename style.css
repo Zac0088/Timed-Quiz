@@ -1,0 +1,10 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100%;
+    background-color: lightseagreen;
+}
+
+button:hover {
+    background-color: blueviolet;
+}
+

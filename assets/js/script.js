@@ -107,14 +107,14 @@ var questions = [
         questionScreen.style.display ="none";
         highScore.style.display = "block";
         var scoreDisplay = document.getElementById("scoreDisplay");
-        scoreDisplay.textContent = "Your Score" + time;
+        scoreDisplay.textContent = "Your Score " + time;
 
-        var submitScore = document.getElementById("submitScore");
-        submitScore.onclick = function(){
+        var submit = document.getElementById("submit");
+        submit.onclick = function(){
             var highscores = JSON.parse(localStorage.getItem("highscores")) || []
-            var usersName = document.getElementById("name").value;
+            var yourName = document.getElementById("yourName").value;
             var scoreObject = {
-                name: usersName,
+                name: yourName,
                 score: time
             }
             highscores.push(scoreObject);
